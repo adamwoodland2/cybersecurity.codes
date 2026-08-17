@@ -226,11 +226,59 @@
     }
   }
 
+  // ---------- PWA: service worker, install prompt, offline notice ----------
+
+  const BOOT_ONLINE = "GCCA TERMINAL v7.3 — LINK: ENCRYPTED (TRUST US) — NODE: GENEVA-9";
+  const BOOT_OFFLINE = "GCCA TERMINAL v7.3 — LINK: SEVERED — RUNNING FROM LOCAL CACHE — CODES STILL VALID";
+
+  function setupConnectivityNotice() {
+    const bootEl = document.getElementById("boot-line");
+    const paint = () => {
+      const off = !navigator.onLine;
+      bootEl.textContent = off ? BOOT_OFFLINE : BOOT_ONLINE;
+      bootEl.classList.toggle("offline", off);
+    };
+    window.addEventListener("online", paint);
+    window.addEventListener("offline", paint);
+    paint();
+  }
+
+  function setupInstallPrompt() {
+    const btn = document.getElementById("install-btn");
+    let deferred = null;
+
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();          // suppress the browser's own mini-infobar
+      deferred = e;
+      btn.hidden = false;
+    });
+
+    btn.addEventListener("click", async () => {
+      if (!deferred) return;
+      btn.hidden = true;
+      const prompt = deferred;
+      deferred = null;
+      prompt.prompt();
+      await prompt.userChoice;     // outcome is the browser's business, not ours
+    });
+
+    window.addEventListener("appinstalled", () => { btn.hidden = true; });
+  }
+
+  function registerServiceWorker() {
+    if (!("serviceWorker" in navigator)) return;
+    // file:// and other non-secure origins reject registration — ignore quietly.
+    navigator.serviceWorker.register("/sw.js").catch(() => {});
+  }
+
   // ---------- boot ----------
 
   document.addEventListener("DOMContentLoaded", () => {
     renderDay(currentDay);
     tick();
     setInterval(tick, 1000);
+    setupConnectivityNotice();
+    setupInstallPrompt();
+    registerServiceWorker();
   });
 })();

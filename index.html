@@ -26,6 +26,18 @@
   <meta name="twitter:image" content="https://cybersecurity.codes/og-image.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- PWA: installable, works offline (all codes are computed client-side) -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <!-- "black", not "black-translucent": translucent puts the classification
+       banner under the iPhone status bar / notch. -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="GCCA Codes">
+  <meta name="application-name" content="GCCA Codes">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
@@ -77,6 +89,11 @@
       },
       {
         "@type": "Question",
+        "name": "Can I install the terminal on my device?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Install this page from your browser menu and it runs full-screen from your home screen and keeps working with no network at all — the codes are computed from the date itself, so an offline terminal is exactly as authoritative as a connected one." }
+      },
+      {
+        "@type": "Question",
         "name": "Does this site collect my data?",
         "acceptedAnswer": { "@type": "Answer", "text": "No. There are no cookies, no tracking, no analytics, and no backend." }
       },
@@ -97,6 +114,9 @@
     <p class="banner" aria-label="Classification banner">TOP SECRET // GLOBAL // EYES ONLY // NO FORWARDING // SERIOUSLY</p>
     <h1>GLOBAL CYBERSECURITY CODE AUTHORITY</h1>
     <p class="terminal-line" id="boot-line">GCCA TERMINAL v7.3 — LINK: ENCRYPTED (TRUST US) — NODE: GENEVA-9</p>
+    <p class="install-line">
+      <button type="button" id="install-btn" class="install-btn" hidden>▸ INSTALL FIELD TERMINAL</button>
+    </p>
   </header>
 
   <main id="main" tabindex="-1">
@@ -146,6 +166,11 @@
       <details>
         <summary>Who runs the Global Cybersecurity Code Authority?</summary>
         <p>That information is classified at a level that is itself classified. There is no staff directory, no published budget, no confirmed bunker under Geneva, and no fax machine — so, again, please stop faxing the codes to your government.</p>
+      </details>
+
+      <details>
+        <summary>Can I install the terminal on my device?</summary>
+        <p>Yes. The Authority issues a field terminal: install this page from your browser menu (or the INSTALL FIELD TERMINAL button, where offered) and it runs full-screen, launches from your home screen, and keeps working with no network at all — the codes are computed from the date itself, so an offline terminal is exactly as authoritative as a connected one.</p>
       </details>
 
       <details>

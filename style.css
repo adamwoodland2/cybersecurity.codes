@@ -103,6 +103,29 @@ h1 {
   min-height: 1.4em;
 }
 
+.terminal-line.offline { color: var(--amber); }
+
+/* ---- install prompt (PWA) ---- */
+/* No margin on the wrapper: while the button is hidden the <p> must collapse to
+   zero height, so the spacing rides on the button itself. */
+.install-line { margin: 0; }
+
+.install-btn {
+  margin-bottom: 0.7rem;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+  background: transparent;
+  border: 1px solid var(--amber);
+  padding: 0.35rem 0.9rem;
+  cursor: pointer;
+  text-shadow: 0 0 8px rgba(255, 176, 0, 0.45);
+}
+
+.install-btn:hover { background: rgba(255, 176, 0, 0.12); }
+.install-btn[hidden] { display: none; }
+
 /* ---- rotation / countdown ---- */
 main { max-width: 68rem; margin: 0 auto; }
 main:focus { outline: none; }
