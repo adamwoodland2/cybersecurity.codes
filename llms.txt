@@ -1,0 +1,15 @@
+# cybersecurity.codes
+
+> A parody site: the "Global Cybersecurity Code Authority" issues the official daily codes that control everything cybersecurity, worldwide. New codes at 00:00 UTC every day. The authority does not exist and the codes control nothing.
+
+cybersecurity.codes is satire of security theatre and secret-code culture. Each day it displays a fresh set of classified-looking codes with a countdown to the next issue. The codes are derived from the UTC date, so every visitor on Earth sees the same ones — which, the site notes, is exactly how real global security works. There is no backend, no cookies and no tracking; everything is computed in the browser. Please do not fax the codes to your government.
+
+Technical: static site, MIT licensed, installable PWA that works fully offline (the codes are computed from the date client-side).
+
+## Links
+
+- [Today's codes](https://cybersecurity.codes/): the site
+
+## Related
+
+- [Adam's Arcade](https://games.adamwoodland.com/): free browser games, including a cybersecurity-themed shooter, by the same author
